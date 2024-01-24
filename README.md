@@ -34,10 +34,26 @@ php artisan key:generate
 php artisan migrate
 ```
 
+`To initialize the database with some data, run the following command`
+
+```bash
+php artisan db:seed
+```
+
+`or if you want to refresh the database`
+
+```bash
+php artisan migrate:fresh --seed
+```
+
 6. Run the application
 
 ```bash
-php artisan serve
+npm run dev # this command will compile the assets
+```
+
+```bash
+php artisan serve # this command will run the application
 ```
 
 ## Testing

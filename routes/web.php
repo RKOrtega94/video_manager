@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,6 @@ Route::view('profile', 'profile')
 
 require __DIR__ . '/auth.php';
 
-require __DIR__ . '/video.php';
+Route::controller(VideoController::class)->prefix('videos')->middleware([])->group(function () {
+    Route::get('/', 'index')->name('videos.index');
+});

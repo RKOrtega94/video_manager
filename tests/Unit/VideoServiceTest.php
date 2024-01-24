@@ -21,7 +21,7 @@ class VideoServiceTest extends TestCase
         $this->service = new VideoService();
 
         $data = [
-            "name" => "Teste",
+            "title" => "Teste",
             "description" => "Teste",
             "url" => "https://www.youtube.com/watch?v=9bZkp7q19f0",
         ];
@@ -37,7 +37,7 @@ class VideoServiceTest extends TestCase
         $this->service = new VideoService();
 
         $data = [
-            "name" => "Teste",
+            "title" => "Teste",
             "description" => "Teste",
             "url" => "https://www.youtube.com/watch?v=9bZkp7q19f0",
         ];
@@ -45,7 +45,7 @@ class VideoServiceTest extends TestCase
         $video = $this->service->create($data);
 
         $data = [
-            "name" => "Teste 2",
+            "title" => "Teste 2",
             "description" => "Teste 2",
             "url" => "https://www.youtube.com/watch?v=9bZkp7q19f0",
         ];
@@ -61,7 +61,7 @@ class VideoServiceTest extends TestCase
         $this->service = new VideoService();
 
         $data = [
-            "name" => "Teste",
+            "title" => "Teste",
             "description" => "Teste",
             "url" => "https://www.youtube.com/watch?v=9bZkp7q19f0",
         ];
@@ -78,7 +78,7 @@ class VideoServiceTest extends TestCase
         $this->service = new VideoService();
 
         $data = [
-            "name" => "Teste",
+            "title" => "Teste",
             "description" => "Teste",
             "url" => "https://www.youtube.com/watch?v=9bZkp7q19f0",
         ];
