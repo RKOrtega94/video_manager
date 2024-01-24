@@ -2,15 +2,21 @@
 
 namespace App\Livewire\Video;
 
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class Filter extends Component
 {
-    public string $searchParam = '';
+    public $search = '';
 
-    public function search(string $search): void
+    protected $listeners = [
+        'search' => 'search',
+    ];
+
+    public function onSearch()
     {
-        $this->emit('search', $search);
+        Log::info($this->search);
+        $this->dispatch('search', search: $this->search);
     }
 
     public function render()

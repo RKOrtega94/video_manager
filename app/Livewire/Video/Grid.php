@@ -4,13 +4,10 @@ namespace App\Livewire\Video;
 
 use App\Service\VideoService;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class Grid extends Component
 {
-    protected $listeners = [
-        'search' => 'search',
-    ];
-
     public array $videos = [];
 
     // on mounted
@@ -22,6 +19,7 @@ class Grid extends Component
     }
 
 
+    #[On('search')]
     public function search(string $search): void
     {
         $service = new VideoService();
