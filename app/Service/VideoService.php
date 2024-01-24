@@ -12,4 +12,23 @@ class VideoService
 
         return $video;
     }
+
+    function update(Video $video, array $data): Video
+    {
+        $video->update($data);
+
+        return $video;
+    }
+
+    function delete(Video $video): void
+    {
+        $video->delete();
+    }
+
+    function get(int $id): Video
+    {
+        $video = Video::findOrFail($id);
+
+        return $video;
+    }
 }
