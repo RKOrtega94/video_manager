@@ -32,7 +32,8 @@ class VideoService
         return $video;
     }
 
-    function search(string $filter): array
+    // Return Array of Videos
+    function search(string $filter)
     {
         $videos = Video::where('title', 'like', "%{$filter}%")
             ->orWhere('description', 'like', "%{$filter}%")
