@@ -28,6 +28,14 @@ new class extends Component {
     <div class="w-full flex flex-col sm:flex-row justify-center items-end sm:justify-end sm:items-center">
         @auth
             <div class="hidden sm:flex sm:items-center sm:ms-6 gap-2">
+                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    {{ __('Dashboard') }}
+                </x-nav-link>
+
+                <x-nav-link :href="route('videos.index')" :active="request()->routeIs('videos.index')" wire:navigate>
+                    {{ __('Videos') }}
+                </x-nav-link>
+
                 <button wire:click="logout" class="text-start">
                     <x-dropdown-link>
                         {{ __('Log Out') }}

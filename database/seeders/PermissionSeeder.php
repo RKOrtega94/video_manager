@@ -27,9 +27,6 @@ class PermissionSeeder extends Seeder
         foreach ($permissions as $permission) {
             $permission = Permission::firstOrCreate(["name" => $permission, "guard_name" => "web"]);
             $permission->save();
-
-            /*  $permission = Permission::firstOrCreate(["name" => $permission, "guard_name" => "api"]);
-            $permission->save(); */
         }
     }
 }
