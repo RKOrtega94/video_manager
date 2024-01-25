@@ -15,7 +15,6 @@ class Filter extends Component
 
     public function onSearch()
     {
-        Log::info($this->search);
         $this->dispatch('search', search: $this->search);
     }
 

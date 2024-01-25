@@ -24,7 +24,7 @@
         <header class="w-full bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 flex justify-center px-4">
             <livewire:layout.navigation />
         </header>
-        <main class="w-full max-w-7xl py-4 text-gray-700 dark:text-gray-200 flex-grow">
+        <main class="w-full max-w-7xl p-4 text-gray-700 dark:text-gray-200 flex-grow">
             {{ $slot }}
         </main>
         <footer class="w-full bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 flex justify-center px-4">
@@ -33,6 +33,9 @@
             </section>
         </footer>
     </div>
+
+    @stack('modal')
+
     @livewireScripts
 </body>
 
