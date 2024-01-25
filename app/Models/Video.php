@@ -21,12 +21,10 @@ class Video extends Model
         return $url;
     }
 
-    public function getEmbed()
+    public function getUrlId()
     {
-        $embed = new Embed();
-
-        $info = $embed->get($this->url);
-
-        return $info;
+        $url = $this->url;
+        $url = str_replace("https://www.youtube.com/watch?v=", "", $url);
+        return $url;
     }
 }
