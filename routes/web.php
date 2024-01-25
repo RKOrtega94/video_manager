@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')->name('home');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -26,7 +26,7 @@ Route::view('profile', 'profile')
 
 require __DIR__ . '/auth.php';
 
-Route::controller(VideoController::class)->prefix('videos')->middleware([])->group(function () {
+Route::controller(VideoController::class)->prefix('videos')->middleware(['auth'])->group(function () {
     Route::get('/', 'index')->name('videos.index');
     Route::get('play/{id}', 'play')->name('video.show');
 });
