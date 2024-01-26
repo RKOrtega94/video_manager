@@ -7,7 +7,6 @@
 
     @if (auth()->user()->can('create_video') ||
             auth()->user()->can('update_video'))
-        User can create or update video
         @push('modal')
             @livewire('video.modal')
         @endpush
