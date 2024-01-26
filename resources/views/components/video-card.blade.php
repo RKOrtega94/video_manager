@@ -1,7 +1,3 @@
-{{-- @php
-    dd($video);
-@endphp --}}
-
 <div>
     <a href="{{ route('video.show', $video['id']) }}" class="w-full flex flex-col h-auto">
         <div class="w-full h-48 bg-gray-300 dark:bg-gray-700 rounded">
@@ -12,6 +8,7 @@
             {{ $video['title'] }}
         </h2>
         <p class="text-gray-500 dark:text-gray-400 overflow-ellipsis overflow-hidden whitespace-nowrap">
-            {{ $video['description'] }}</p>
+            {{ $video['description'] }}
+        </p>
     </a>
 </div>
