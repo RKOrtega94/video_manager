@@ -89,3 +89,44 @@ Run the tests
 ```bash
 php artisan test
 ```
+
+## Api
+
+The api authentication is provided by passport, so you must run the following command to generate the keys
+
+```bash
+php artisan passport:install
+```
+
+### Create personal client
+
+```bash
+php artisan passport:client --personal
+```
+
+### Endpoints
+
+#### Login
+
+```CURL
+POST /api/login
+```
+
+```JSON
+{
+    "email": "ADMIN EMAIL",
+    "password": "ADMIN PASSWORD"
+}
+```
+
+#### Views report
+
+```CURL
+GET /api/reports/views
+```
+
+#### Search report
+
+```CURL
+GET /api/reports/search
+```

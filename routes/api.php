@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ReportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+route::middleware('json.response')->group(function () {
+    Route::controller(AuthController::class)->group(function () {
+        Route::post('login', 'login');
+    });
+
+    Route::middleware('auth:api')->group(function () {
+        Route::controller(ReportController::class)->prefix('reports')->group(function () {
+            Route::get('views', 'viewsReport');
+            Route::get('search', 'searchReport');
+        });
+    });
 });

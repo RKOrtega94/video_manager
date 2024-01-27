@@ -13,7 +13,19 @@ class ReportTest extends TestCase
     /** @test */
     public function renders_successfully()
     {
+        $viewService = \Mockery::mock('overload:App\Service\ViewService');
+        $reportService = \Mockery::mock('overload:App\Service\ReportService');
+
+        $expectedViewsReport = ['viewsReport'];
+        $expectedSearchReport = ['searchReport'];
+
+        $viewService->shouldReceive('buildReport')->once()->andReturn($expectedViewsReport);
+        $reportService->shouldReceive('buildSearchReport')->once()->andReturn($expectedSearchReport);
+
         Livewire::test(Report::class)
-            ->assertStatus(200);
+            ->set('viewService', $viewService)
+            ->set('reportService', $reportService)
+            ->assertSet('viewsReport', $expectedViewsReport)
+            ->assertSet('searchReport', $expectedSearchReport);
     }
 }
